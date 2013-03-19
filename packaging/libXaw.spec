@@ -1,18 +1,11 @@
-#
-# Please submit bugfixes or comments via http://bugs.tizen.org/
-#
-
 Name:           libXaw
 Version:        1.0.11
 Release:        1
 License:        MIT
 Summary:        X Athena Widget Set
 Url:            http://www.x.org
-Group:          System Environment/Libraries
-
+Group:          Graphics/X Window System
 Source:         %{name}-%{version}.tar.bz2
-
-# Required by the configury.
 BuildRequires:  ed
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
@@ -60,7 +53,7 @@ rm -f %{buildroot}%{_libdir}/*.la
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/libXaw.so.7
 %{_libdir}/libXaw7.so.7
 %{_libdir}/libXaw7.so.7.0.0
@@ -68,7 +61,6 @@ rm -f %{buildroot}%{_libdir}/*.la
 %files devel
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11/Xaw
-%doc COPYING
 %{_includedir}/X11/Xaw/*.h
 # FIXME:  Is this C file really supposed to be here?
 %{_includedir}/X11/Xaw/Template.c
