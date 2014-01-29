@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXaw
 Version:        1.0.11
 Release:        1
@@ -15,6 +17,10 @@ BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xpm)
 BuildRequires:  pkgconfig(xproto)
 BuildRequires:  pkgconfig(xt)
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 Xaw is a widget set based on the X Toolkit Intrinsics (Xt) Library.
